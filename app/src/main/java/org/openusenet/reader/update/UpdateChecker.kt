@@ -67,24 +67,10 @@ object UpdateChecker {
 
     /**
      * true se [latest] è una versione strettamente maggiore di [current].
-     * Confronto NUMERICO segmento per segmento (così 1.2.10 > 1.2.9, cosa che il
-     * confronto tra stringhe sbaglierebbe). I segmenti mancanti valgono 0
-     * (1.2 == 1.2.0). Robusto a spazi e a segmenti non numerici (→ 0).
+     * 1.5.8: il corpo sta in [versionePiuNuova] (VersioneVista.kt, puro), che
+     * serve anche alla striscia «Aggiornato a».
      */
-    fun isNewer(latest: String, current: String): Boolean {
-        val a = segmenti(latest)
-        val b = segmenti(current)
-        val n = maxOf(a.size, b.size)
-        for (i in 0 until n) {
-            val x = a.getOrElse(i) { 0 }
-            val y = b.getOrElse(i) { 0 }
-            if (x != y) return x > y
-        }
-        return false
-    }
-
-    private fun segmenti(v: String): List<Int> =
-        v.trim().split('.').map { it.trim().toIntOrNull() ?: 0 }
+    fun isNewer(latest: String, current: String): Boolean = versionePiuNuova(latest, current)
 
     /** Vedi [intervalloControlloMs] in FinestraControllo.kt (1.5.4: spostata li', pura). */
     fun intervalMs(mode: String): Long? = intervalloControlloMs(mode)

@@ -6,9 +6,9 @@ Scritto da zero in Kotlin + Jetpack Compose. Nasce dal MOD 17 di *Newsreader* di
 
 Il package interno resta `org.openusenet.reader` — invariato di proposito, per non rompere gli aggiornamenti già installati.
 
-**Versione 1.5.7** (versionCode 175) — 22 ottobre 2026
+**Versione 1.5.8** (versionCode 176) — 27 ottobre 2026
 
-## Funzioni (1.5.7)
+## Funzioni (1.5.8)
 
 - Multi-server NNTP con SSL/TLS implicito **o STARTTLS** (RFC 3977 + RFC 4643 + RFC 4642) e autenticazione, con **verifica del nome host sul certificato** (RFC 6125) e fallback automatico IPv6/IPv4; CAPABILITIES letto e loggato alla connessione; riuso della connessione durante la lettura di un thread; **allarme se un server che offriva STARTTLS smette di annunciarlo** (RFC 4642 §5)
 - Ricerca e sottoscrizione gruppi, sync incrementale delle headline con `OVER` e ripiego automatico su `XOVER` per i server che non riconoscono `OVER` (es. Astraweb)
@@ -22,6 +22,15 @@ Il package interno resta `org.openusenet.reader` — invariato di proposito, per
 - Backup e ripristino della configurazione, con cifratura opzionale
 - Material 3, tema chiaro/scuro/di sistema, dynamic color, tinte e dimensioni del testo, layout a pannelli per schermi larghi
 - Interfaccia in italiano e inglese, con **interruttore lingua dentro l'app** (Aspetto → Lingua) oltre alla voce di sistema su Android 13+
+
+## Novità della 1.5.8
+
+> Una piccola manutenzione, la prima release preparata con Claude Code.
+
+- **Dopo un aggiornamento NeReO te lo dice** *(Marco, 26/10, piano B1)*. Striscia «Aggiornato a <versione> — Novità» in cima all'elenco dei gruppi e alla colonna gruppi della vista a pannelli: tocco = Novità, ✕ = chiusa. Un componente solo (`ui/StrisciaAggiornato.kt`), decisione pura in `update/VersioneVista.kt` (`deveMostrareAggiornato`, dove è stato spostato il confronto di versioni di `UpdateChecker`). La versione vista sta nelle preferenze `manutenzione`, che il backup non copia; prima installazione = `firstInstallTime == lastUpdateTime`, quindi niente striscia. Si confronta `ReleaseNotes.VERSION`: compare una volta per versione, non per build
+
+- **Il wrapper di Gradle funziona da riga di comando.** `gradle-wrapper.jar` era di una generazione più vecchia di `gradlew`/`gradlew.bat` e senza `Main-Class`: `gradlew` non partiva (Android Studio non lo usa, per questo non si era visto). Rigenerato per Gradle 9.5.0; entra anche `gradle/gradle-daemon-jvm.properties`
+- **I test di unità compilano e girano.** Tre nomi tra backtick in `CoreTests.kt` contenevano `:`, che Kotlin rifiuta su Android: corretti, asserzioni invariate. 186 test, tutti passati; la suite ha un controllo nuovo (10) sui nomi tra backtick
 
 ## Novità della 1.5.7
 

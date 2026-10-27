@@ -1,8 +1,18 @@
 ======================================================================
- NeReO 1.5.7 - Ne(ws) Re(ader) O(pen-source)
+ NeReO 1.5.8 - Ne(ws) Re(ader) O(pen-source)
  Text-only Usenet (NNTP) newsreader for Android
- NeReO 1.5.7 (versionCode 175) - By MCSM - 2026/10/22
+ NeReO 1.5.8 (versionCode 176) - By MCSM - 2026/10/27
 ======================================================================
+ ***  VERSION 1.5.8  ***
+
+ A small maintenance release.
+
+  * AFTER AN UPDATE NEREO TELLS YOU. At the top of the group list a strip "Updated to 1.5.8 - What's new" appears: tap it to open the release notes, or close it with the X. It appears once per version, not after a fresh install nor after restoring a backup. With a remote control, reach it with the down key.
+
+  * FOR THOSE WHO BUILD FROM SOURCE: gradlew works again from the command line (wrapper regenerated for Gradle 9.5.0).
+
+  * THE UNIT TESTS compile and all pass, and are now part of the checks of every release.
+
  ***  VERSION 1.5.7  ***
 
  A week of requests: users, testers and Marco.

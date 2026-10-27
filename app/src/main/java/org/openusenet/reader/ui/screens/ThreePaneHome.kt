@@ -70,6 +70,7 @@ import org.openusenet.reader.ui.icone.Fullscreen
 import org.openusenet.reader.ui.icone.FullscreenExit
 import org.openusenet.reader.ui.icone.Info
 import org.openusenet.reader.ui.icone.NewReleases
+import org.openusenet.reader.ui.StrisciaAggiornato
 import org.openusenet.reader.ui.icone.Update
 import org.openusenet.reader.ui.icone.KeyboardArrowUp
 import org.openusenet.reader.ui.icone.KeyboardArrowDown
@@ -421,6 +422,9 @@ fun ThreePaneHome(repo: NewsRepository, nav: NavHostController) {
         // righe) e le proporzioni arrivano dalle impostazioni Aspetto
         val groupsPane: @Composable () -> Unit = {
             Column {
+                    // 1.5.8: «Aggiornato a <versione> — Novita'», una volta per
+                    // versione. Stesso componente di GroupsScreen: ui/StrisciaAggiornato.kt.
+                    StrisciaAggiornato(nav)
                     // 1.2.6 (Marco/Dave): toggle "riordina" per la colonna gruppi in
                     // tablet mode. Mostrato solo se ci sono gruppi.
                     if (groups.isNotEmpty()) {

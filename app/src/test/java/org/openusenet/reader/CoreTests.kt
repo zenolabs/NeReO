@@ -73,6 +73,8 @@ import org.openusenet.reader.ui.screens.idDiscussioneSuccessiva
 import org.openusenet.reader.ui.screens.idMessaggioPrecedente
 import org.openusenet.reader.ui.screens.idMessaggioSuccessivo
 import org.openusenet.reader.ui.screens.idPrimoNonLettoDopo
+import org.openusenet.reader.update.deveMostrareAggiornato
+import org.openusenet.reader.update.versionePiuNuova
 
 class FilterEngineTest {
 
@@ -372,7 +374,7 @@ class FollowupPropagatorTest {
     }
 
     @Test
-    fun `References troncato: la chiusura transitiva ricostruisce il ramo`() {
+    fun `References troncato - la chiusura transitiva ricostruisce il ramo`() {
         // <l3> ha perso <troll> dal CENTRO della catena (potatura RFC 5536):
         // l'intersezione secca col seme non lo troverebbe.
         val troncato = listOf(
@@ -879,7 +881,7 @@ class GruppiDestinazioneTests {
      * quello che nessuno prova a mano.
      */
     @Test
-    fun `impostazione spenta: nessun gruppo extra`() {
+    fun `impostazione spenta - nessun gruppo extra`() {
         assertEquals(
             emptyList<String>(),
             extraPredefinitiCrosspost(
@@ -891,7 +893,7 @@ class GruppiDestinazioneTests {
     }
 
     @Test
-    fun `impostazione accesa: gli altri gruppi, senza il corrente`() {
+    fun `impostazione accesa - gli altri gruppi, senza il corrente`() {
         assertEquals(
             listOf("alt.test", "misc.test"),
             extraPredefinitiCrosspost(
@@ -2092,4 +2094,45 @@ class DiscussioneDiTests {
         assertTrue(effettoPropagazioneDi(-9999, -30).nascondi)
     }
 
+}
+
+/**
+ * 1.5.8 — la striscia «Aggiornato a <versione> — Novita'» (piano B1 di Marco)
+ * e il confronto di versioni spostato da UpdateChecker.isNewer.
+ */
+class StrisciaAggiornatoTest {
+
+    @Test
+    fun `confronto numerico, non testuale`() {
+        assertTrue(versionePiuNuova("1.4.10", "1.4.9"))
+        assertTrue(versionePiuNuova("1.5", "1.4.11"))
+        assertTrue(versionePiuNuova("1.5.8", "1.5.7"))
+        assertFalse(versionePiuNuova("1.5.7", "1.5.8"))
+        assertFalse(versionePiuNuova("1.5.7", "1.5.7"))
+        assertFalse(versionePiuNuova("1.2", "1.2.0"))
+        assertFalse(versionePiuNuova(" 1.2.0 ", "1.2"))
+    }
+
+    @Test
+    fun `mai alla prima installazione`() {
+        assertFalse(deveMostrareAggiornato("1.5.8", null, primaInstallazione = true))
+        assertFalse(deveMostrareAggiornato("1.5.8", "1.5.7", primaInstallazione = true))
+    }
+
+    @Test
+    fun `chi aggiorna dalla 1_5_7 non ha la chiave e la vede`() {
+        assertTrue(deveMostrareAggiornato("1.5.8", null, primaInstallazione = false))
+        assertTrue(deveMostrareAggiornato("1.5.8", "", primaInstallazione = false))
+    }
+
+    @Test
+    fun `una volta sola per versione`() {
+        assertTrue(deveMostrareAggiornato("1.5.9", "1.5.8", primaInstallazione = false))
+        assertFalse(deveMostrareAggiornato("1.5.8", "1.5.8", primaInstallazione = false))
+    }
+
+    @Test
+    fun `tornare a una versione vecchia non la fa comparire`() {
+        assertFalse(deveMostrareAggiornato("1.5.7", "1.5.8", primaInstallazione = false))
+    }
 }

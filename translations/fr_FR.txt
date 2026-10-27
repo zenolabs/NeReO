@@ -633,6 +633,9 @@ flt_import =
 # en: Close
 common_close =
 
+# en: Updated to %1$s — What's new
+aggiornato_striscia =
+
 # en: New rule
 flt_rule_new =
 
@@ -2908,6 +2911,12 @@ rn_v155_l7 =
 
 # en: New messages really stay in view now. The 1.5.4 fix worked only when NeReO had just taken you back to where you left off: on the first visit to a group after starting the app, or when the list was already at the top, the messages arriving with the sync could still end up above the edge of the screen. Now, every time you open a group, if new messages arrive and you have not yet moved the list with your finger, it goes to the top to show them. With the "newest first" orders it also notices a reply inside the thread that is already at the top. With the "oldest first" orders, where new messages are at the bottom, you stay where you were. In the panel view too.
 rn_v155_l8 =
+
+# en: New in 1.5.8
+rn_v158_title =
+
+# en: After an update NeReO tells you. At the top of the group list a strip «Updated to 1.5.8 — What's new» appears: tap it to open this screen, or close it with the ✕. It appears once per version, not after a fresh install nor after restoring a backup. With a remote control, reach it with the down key.
+rn_v158_l1 =
 
 # en: New in 1.5.7
 rn_v157_title =

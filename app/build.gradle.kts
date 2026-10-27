@@ -2040,8 +2040,14 @@ android {
         // stringhe EN e 17 IT avevano " (o &quot;) non protette, che Android
         // tratta come delimitatori e toglie a schermo. Ora \" ovunque; nuovo
         // controllo 5-bis nella suite. Scoperto provando controlli/traduzioni.py.
-        versionCode = 175
-        versionName = "1.5.7"
+        // 1.5.7 / 175 PUBBLICATA il 22 ottobre 2026 (SourceForge + GitHub v1.5.7).
+        // versionCode 176 (27 ottobre 2026) - versionName CAMBIA (1.5.7 pubblica;
+        // 1.5.8 deciso da Marco). Prima release fatta con Claude Code. La striscia
+        // «Aggiornato a <versione> — Novita'» in cima ai gruppi (ui/StrisciaAggiornato.kt,
+        // idea di Marco, piano B1); wrapper di Gradle rigenerato (9.5.0: gradlew
+        // non partiva da riga di comando); CoreTests.kt compila e gira (186 test).
+        versionCode = 176
+        versionName = "1.5.8"
     }
 
     buildTypes {

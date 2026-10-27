@@ -25,7 +25,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -33,11 +35,16 @@ import androidx.navigation.NavHostController
 import org.openusenet.reader.Branding
 import org.openusenet.reader.R
 import org.openusenet.reader.ReleaseNotes
+import org.openusenet.reader.ui.VersioneVista
 import org.openusenet.reader.ui.indietroSicuro
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ReleaseNotesScreen(nav: NavHostController) {
+    // 1.5.8 (piano B1): aprire le Novita', dalla striscia o dal menu, segna la
+    // versione come vista e la striscia «Aggiornato a» non ricompare.
+    val ctx = LocalContext.current
+    LaunchedEffect(Unit) { VersioneVista.segnaVista(ctx) }
     Scaffold(
         topBar = {
             TopAppBar(

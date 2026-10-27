@@ -243,6 +243,8 @@
     <string name="flt_killfile_note">Edit or paste a kill-file, then Import. The text below is the export of the current rules.</string>
     <string name="flt_import">Import</string>
     <string name="common_close">Close</string>
+    <!-- 1.5.8: striscia dopo un aggiornamento (ui/StrisciaAggiornato.kt) -->
+    <string name="aggiornato_striscia">Updated to %1$s — What\'s new</string>
     <string name="flt_rule_new">New rule</string>
     <string name="flt_rule_edit">Edit rule</string>
     <string name="flt_name_opt">Name (optional)</string>
@@ -1057,6 +1059,8 @@
     <!-- 1.4.10: manutenzione, nessuna voce chiesta da fuori. -->
     <string name="rn_v155_l7">X-Faces are shown. The classic black-and-white Usenet face (the X-Face header, sent by MesNews and many traditional newsreaders) now appears next to the author\'s name, where until now only the colour Face did. Tap it to enlarge it: it stays sharp, square by square. Order: Face first, then X-Face, then the coloured initials. NeReO shows X-Faces but does not send them.</string>
     <string name="rn_v155_l8">New messages really stay in view now. The 1.5.4 fix worked only when NeReO had just taken you back to where you left off: on the first visit to a group after starting the app, or when the list was already at the top, the messages arriving with the sync could still end up above the edge of the screen. Now, every time you open a group, if new messages arrive and you have not yet moved the list with your finger, it goes to the top to show them. With the \"newest first\" orders it also notices a reply inside the thread that is already at the top. With the \"oldest first\" orders, where new messages are at the bottom, you stay where you were. In the panel view too.</string>
+    <string name="rn_v158_title">New in 1.5.8</string>
+    <string name="rn_v158_l1">After an update NeReO tells you. At the top of the group list a strip «Updated to 1.5.8 — What\'s new» appears: tap it to open this screen, or close it with the ✕. It appears once per version, not after a fresh install nor after restoring a backup. With a remote control, reach it with the down key.</string>
     <string name="rn_v157_title">New in 1.5.7</string>
     <string name="rn_v157_l1">Quotation marks are shown again. In some fifty texts of the app - settings notes, messages, release notes - words meant to appear in quotes were shown without them, because of how those texts were written. Fixed everywhere, and a check now prevents it from coming back.</string>
     <string name="rn_v157_l2">The volume keys can turn the page. In Appearance there is a new switch, off by default: when it is on, in full-screen reading volume down opens the next message and volume up the previous one, so you can read with one hand. Everywhere else - lists, writing, other screens - the keys change the volume as usual, and holding a key down does not race through the thread.</string>

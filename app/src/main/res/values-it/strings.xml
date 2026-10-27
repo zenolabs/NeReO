@@ -249,6 +249,8 @@
     <string name="flt_killfile_note">Modifica o incolla un kill-file, poi Importa. Il testo qui sotto è l\'export delle regole attuali.</string>
     <string name="flt_import">Importa</string>
     <string name="common_close">Chiudi</string>
+    <!-- 1.5.8: striscia dopo un aggiornamento (ui/StrisciaAggiornato.kt) -->
+    <string name="aggiornato_striscia">Aggiornato a %1$s — Novità</string>
     <string name="flt_rule_new">Nuova regola</string>
     <string name="flt_rule_edit">Modifica regola</string>
     <string name="flt_name_opt">Nome (opzionale)</string>
@@ -1063,6 +1065,8 @@
     <!-- 1.4.10: manutenzione, nessuna voce chiesta da fuori. -->
     <string name="rn_v155_l7">Le X-Face si vedono. La classica faccina in bianco e nero di Usenet (l\'intestazione X-Face, mandata da MesNews e da molti lettori tradizionali) compare ora accanto al nome dell\'autore, dove finora compariva solo la Face a colori. Toccala per ingrandirla: resta nitida, a quadretti. L\'ordine è: prima la Face, poi la X-Face, poi le iniziali colorate. NeReO mostra le X-Face ma non le invia.</string>
     <string name="rn_v155_l8">I messaggi nuovi restano davvero in vista. La correzione della 1.5.4 funzionava solo quando NeReO ti aveva appena riportato dove eri rimasto: al primo ingresso nel gruppo dopo aver aperto l\'app, o quando la lista era già in cima, i messaggi che arrivavano con la sincronizzazione potevano ancora finire sopra il bordo dello schermo. Ora, ogni volta che apri un gruppo, se arrivano messaggi nuovi e non hai ancora spostato la lista col dito, sale in cima a mostrarli. Con gli ordinamenti \"dai più recenti\" si accorge anche di una risposta dentro la discussione che è già in cima. Con gli ordinamenti \"dai più vecchi\", dove i nuovi stanno in fondo, resti dove sei. Anche nella vista a pannelli.</string>
+    <string name="rn_v158_title">Novità della 1.5.8</string>
+    <string name="rn_v158_l1">Dopo un aggiornamento NeReO te lo dice. In cima all\'elenco dei gruppi compare una striscia «Aggiornato a 1.5.8 — Novità»: toccandola si apre questa schermata, con la ✕ si chiude. Compare una volta per versione, non dopo la prima installazione né dopo un ripristino del backup. Col telecomando si raggiunge col tasto giù.</string>
     <string name="rn_v157_title">Novità della 1.5.7</string>
     <string name="rn_v157_l1">Le virgolette si vedono di nuovo. In una cinquantina di testi dell\'app - note delle impostazioni, messaggi, note di versione - le parole che dovevano comparire fra virgolette comparivano senza, per come quei testi erano scritti. Corretto ovunque, e un controllo impedisce che si ripresenti.</string>
     <string name="rn_v157_l2">I tasti del volume possono sfogliare i messaggi. In Aspetto c\'è un interruttore nuovo, spento di default: quando è acceso, nella lettura a schermo intero volume giù apre il messaggio successivo e volume su il precedente, così si legge con una mano sola. Altrove - elenchi, scrittura, altre schermate - i tasti regolano il volume come sempre, e tenendo premuto un tasto non si corre per tutta la discussione.</string>

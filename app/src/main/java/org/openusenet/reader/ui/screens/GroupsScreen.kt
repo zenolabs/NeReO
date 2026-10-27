@@ -31,6 +31,7 @@ import org.openusenet.reader.ui.icone.Email
 import org.openusenet.reader.ui.icone.FilterAlt
 import org.openusenet.reader.ui.icone.Info
 import org.openusenet.reader.ui.icone.NewReleases
+import org.openusenet.reader.ui.StrisciaAggiornato
 import org.openusenet.reader.ui.icone.Update
 import org.openusenet.reader.ui.icone.Palette
 import org.openusenet.reader.ui.icone.Person
@@ -311,6 +312,9 @@ fun GroupsScreen(repo: NewsRepository, nav: NavHostController) {
                 eseguiSync { repo.syncAllSubscribed() }
             }
         }
+        // 1.5.8: «Aggiornato a <versione> — Novita'», una volta per versione.
+        // Stesso componente della colonna gruppi dei pannelli: ui/StrisciaAggiornato.kt.
+        StrisciaAggiornato(nav)
         if (syncing) LinearProgressIndicator(Modifier.fillMaxWidth())
         PullToRefreshBox(
             isRefreshing = syncing,
